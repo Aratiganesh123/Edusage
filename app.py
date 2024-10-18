@@ -2,6 +2,7 @@ import streamlit as st
 import asyncio
 from pages.summarizer_page import show_summarizer_page
 from pages.glossary_page import show_glossary_page
+from pages.quiz_page import show_quiz_page  # Add this import
 
 def style_app():
     st.markdown(
@@ -79,6 +80,8 @@ async def main():
         await show_summarizer_page()
     elif page == "📖 Glossary Extractor":
         await show_glossary_page()
+    elif page == "❓ Quiz":
+        show_quiz_page()  # Add this line to call the quiz page
 
 if __name__ == "__main__":
     asyncio.run(main())

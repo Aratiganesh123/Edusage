@@ -22,6 +22,34 @@ async def process_pdf_for_glossary(pdf_extract, tmp_file_path, output_dir, unzip
 
 async def show_glossary_page():
     st.header("Glossary Extractor")
+        # Custom CSS for the info box
+    st.markdown("""
+    <style>
+    .stInfo {
+        background-color: #E6F3FF;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #3498DB;
+        margin-bottom: 20px;
+    }
+    .stInfo p {
+        color: #2C3E50;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Info box with concise description
+    st.info("""
+    📘 **Quick Guide:**
+    1. Upload your PDF document
+    2. Click "Extract Glossary"
+    3. Review extracted terms and definitions
+    4. Use the glossary for quick reference
+
+    Great for understanding key terms and concepts!
+    """)
 
     uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 

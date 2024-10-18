@@ -78,6 +78,33 @@ async def process_pdf(pdf_extract, tmp_file_path, output_dir, unzip_dir, chunked
 async def show_summarizer_page():
     st.header("Summarizer & Slide Deck Creator")
 
+    st.markdown("""
+    <style>
+    .stInfo {
+        background-color: #E6F3FF;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #3498DB;
+        margin-bottom: 20px;
+    }
+    .stInfo p {
+        color: #2C3E50;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Info box with concise description
+    st.info("""
+    📑 **Quick Guide:**
+    1. Upload your PDF document
+    2. Choose summarization options
+    3. Generate concise summary
+    4. Create slide deck from summary
+
+    Ideal for quick document review and presentation prep!
+    """)
     uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
 
     if uploaded_file is not None:
